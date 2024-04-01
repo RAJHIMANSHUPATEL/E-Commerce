@@ -52,7 +52,7 @@ const products_reducer = (state, action) => {
   }
 
   //Get Single Product
-  if (action === GET_SINGLE_PRODUCT_BEGIN) {
+  if (action.type === GET_SINGLE_PRODUCT_BEGIN) {
     return {
       ...state,
       single_product_loading: true,
@@ -60,7 +60,7 @@ const products_reducer = (state, action) => {
     }
   }
 
-  if (action === GET_SINGLE_PRODUCT_SUCCESS) {
+  if (action.type === GET_SINGLE_PRODUCT_SUCCESS) {
     return {
       ...state,
       single_product_loading: false,
@@ -68,7 +68,7 @@ const products_reducer = (state, action) => {
     }
   }
 
-  if (action === GET_SINGLE_PRODUCT_ERROR) {
+  if (action.type === GET_SINGLE_PRODUCT_ERROR) {
     return {
       ...state,
       single_product_loading: false,
