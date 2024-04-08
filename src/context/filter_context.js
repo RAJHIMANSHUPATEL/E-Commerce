@@ -29,10 +29,17 @@ export const FilterProvider = ({ children }) => {
       type: LOAD_PRODUCTS, payload: products
     })
   }, [products])
-
+  
+  //Set Grid View
+  const setGridView = () => {
+    dispatch({type: SET_GRIDVIEW})
+  }
+  const setListView = () => {
+    dispatch({type: SET_LISTVIEW})
+  }
 
   return (
-    <FilterContext.Provider value={{ ...state }}>
+    <FilterContext.Provider value={{ ...state, setGridView, setListView }}>
       {children}
     </FilterContext.Provider>
   )
