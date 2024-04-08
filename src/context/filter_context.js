@@ -25,12 +25,13 @@ export const FilterProvider = ({ children }) => {
 
   useEffect(() => {
     dispatch({
-      type: LOAD_PRODUCTS, payload: products})
+      type: LOAD_PRODUCTS, payload: products
+    })
   }, [products])
 
 
   return (
-    <FilterContext.Provider value='filter context'>
+    <FilterContext.Provider value={{ ...state }}>
       {children}
     </FilterContext.Provider>
   )
